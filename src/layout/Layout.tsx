@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import Layout, { Content } from "antd/es/layout/layout";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
-import { Skeleton } from "antd";
 
 // Define el tipo para las props de MainLayout
 interface MainLayoutProps {
@@ -20,7 +19,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Navbar onToggleSidebar={toggleSidebar} isCollapsed={isCollapsed} />
-      <Layout>
+      <Layout hasSider={true}>
         <SideBar isCollapsed={isCollapsed} />
         <Layout style={{ padding: "0 24px 24px" }}>
           <Content
@@ -31,7 +30,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               background: "#fff",
             }}
           >
-            {children || <Skeleton active />}
+            {children}
           </Content>
         </Layout>
       </Layout>
