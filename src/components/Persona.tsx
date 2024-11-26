@@ -1,4 +1,4 @@
-import MainLayout from "../layout/Layout";
+import MainLayout from "@/layout/Layout";
 
 export default function Persona() {
   return (
